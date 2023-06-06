@@ -24,7 +24,7 @@ class GiphyGrabber():
         with open(self.config_path) as config_file:
             return json.load(config_file).get('config')
 
-    def save_gif(self, filename=time.strftime("%Y-%m-%d_%H-%M-%S"), path='/Users/matt/Desktop/gifs/'):
+    def save_gif(self, filename=time.strftime("%Y-%m-%d_%H-%M-%S"), path=f'{os.path.expanduser("~")}/Desktop/gifs/'):
         try:
             r = requests.get(self.clean_gif_url)
             with open(f'{path}{filename}.gif', 'wb') as f:
